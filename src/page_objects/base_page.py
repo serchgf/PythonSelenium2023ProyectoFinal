@@ -37,8 +37,8 @@ class BasePage:
         return self.__dict__[key_name]
 
     def take_screenshot(self, img_name: str):
-        with open(f"screenshots/{img_name}.png", "w") as screenshot_file:
-            self.__driver.save_screenshot(screenshot_file)
+        file_path = os.path.join(_SCREENSHOTS_DIR_PATH, f"{img_name}.png")
+        self.__driver.save_screenshot(file_path)
 
     def __load_locators_attributes(self):
         locator_config = self.__load_locators_config()
