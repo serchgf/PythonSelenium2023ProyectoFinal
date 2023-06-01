@@ -8,6 +8,10 @@
     "search_btn": {
       "by": "XPATH",
       "value": "//div[@id=\"search\"]//button"
+    },
+    "menu_bar": {
+      "by": "XPATH",
+      "value": "//ul[@class='nav navbar-nav']/li/a"
     }
   }
 }

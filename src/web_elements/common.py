@@ -39,3 +39,4 @@ class WebElementWrapper:
     def wait_until_disappears(self):
         logging.info(f"Wait until disappears: {self.__locator}")
         self.__wait_driver.until(EC.invisibility_of_element_located(self.__locator))
+

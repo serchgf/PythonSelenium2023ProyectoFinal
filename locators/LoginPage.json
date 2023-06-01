@@ -16,6 +16,14 @@
     "warning_message": {
       "by": "CLASS_NAME",
       "value": "alert-danger"
+    },
+    "forgotten_password_linktext": {
+      "by": "XPATH",
+      "value": "//div[@class='form-group']//a"
+    },
+    "continue_btn": {
+      "by": "XPATH",
+      "value": "//input[@value='Continue']"
     }
   }
 }

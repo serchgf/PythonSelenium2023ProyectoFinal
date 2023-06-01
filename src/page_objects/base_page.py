@@ -11,6 +11,7 @@ from src.web_elements.common import WebElementWrapper
 
 
 _LOCATOR_DIR_PATH = os.path.join(pathlib.Path(__file__).parent.parent.parent, "locators")
+_SCREENSHOTS_DIR_PATH = os.path.join(pathlib.Path(__file__).parent.parent.parent, "screenshots")
 
 
 class BasePage:
@@ -18,6 +19,7 @@ class BasePage:
         self.__driver = driver
         self.__wait_driver = wait_driver
         self.__load_locators_attributes()
+
 
     def open(self):
         self.__driver.get(self.url)
@@ -33,6 +35,10 @@ class BasePage:
 
     def element(self, key_name) -> WebElementWrapper:
         return self.__dict__[key_name]
+
+    def take_screenshot(self, img_name: str):
+        with open(f"screenshots/{img_name}.png", "w") as screenshot_file:
+            self.__driver.save_screenshot(screenshot_file)
 
     def __load_locators_attributes(self):
         locator_config = self.__load_locators_config()
